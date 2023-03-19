@@ -1,0 +1,43 @@
+version: "1"
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+  client1:
+    build:
+      context: ./client1
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - server
+  client2:
+    build:
+      context: ./client2
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    depends_on:
+      - server
+  client3:
+    build:
+      context: ./client3
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    depends_on:
+      - server
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - server
+      - client1
+      - client2
+      - client3
