@@ -1,12 +1,19 @@
-server:port:8081
+server:
+  port: 8081
 
-spring:applicatoin:name:server
+spring:
+  applicatoin:
+    name: server
 
-eureka:client:register-with-eureka:false
-eureka:client:fetch-registry:false
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://host.docker.internal:8081/eureka
 
-eureka:client:service-url:defaultZone:http://localhost:8081/eureka
-
-logging:level:com:netflix:eureka:OFF
-logging:level:com:netflix:discovery:OFF
+logging:
+  level:com:netflix:
+    eureka: OFF
+    discovery: OFF
 
