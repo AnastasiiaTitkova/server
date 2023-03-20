@@ -9,10 +9,10 @@
 В терминале перейти в эту директорию и ввести команды:
 	docker-compose build
 	docker-compose up
-Перейти по ссылке http://host.docker.internal:8081/
-Для того, чтобы "отправить" sms, перейти по ссылке http://host.docker.internal:8082/sms
-Для того, чтобы "отправить" push, перейти по ссылке http://host.docker.internal:8082/push
-Для того, чтобы "отправить" email, перейти по ссылке http://host.docker.internal:8082/email
+Eureka Server: http://host.docker.internal:8081/
+Для того, чтобы "отправить" sms, выполните запрос POST http://host.docker.internal:8082/sms
+Для того, чтобы "отправить" push, выполните запрос POST http://host.docker.internal:8082/push
+Для того, чтобы "отправить" email, выполните запрос POST http://host.docker.internal:8082/email
 В логах будут сообщения:
 	sms was sent
 	push was sent
